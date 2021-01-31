@@ -18,5 +18,5 @@ UCI Diabetes 130-US Hospitals for Years 1999-2008
 * PostgreSQL
 * Seaborn
 * Pandas
-### Possible impacts of your project:
+### Possible Impacts:
 Health outcomes for diabetic patients can be improved and healthcare costs for treatment can be lowered.
