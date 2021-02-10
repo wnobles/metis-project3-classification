@@ -13,7 +13,7 @@ Using a dataset submitted to UCI from Virginia Commonwealth University detailing
 * Admission Type
 * Length of Hospital Stay
 ### Data Used (e.g., NYC Open Data):
-[UCI Diabetes 130-US Hospitals for Years 1999-2008]('https://archive.ics.uci.edu/ml/datasets/Diabetes+130-US+hospitals+for+years+1999-2008')
+[UCI Diabetes 130-US Hospitals for Years 1999-2008](https://archive.ics.uci.edu/ml/datasets/Diabetes+130-US+hospitals+for+years+1999-2008)
 ### Tools Used (e.g., Scrapy, Seaborn, etc.):
 * PostgreSQL
 * Seaborn
