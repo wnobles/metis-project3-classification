@@ -34,5 +34,5 @@ Using a dataset submitted to UCI from Virginia Commonwealth University detailing
 * Scikit-Learn
 * XGBoost
 
-### Possible Impacts:
+### Possible Impacts
 Health outcomes for diabetic patients can be improved and healthcare costs for treatment can be lowered.
