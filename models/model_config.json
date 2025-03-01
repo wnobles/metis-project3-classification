@@ -1,0 +1,20 @@
+{
+    "threshold": 0.3,
+    "numeric_features": [
+        "age",
+        "num_lab_procedures",
+        "num_medications_log",
+        "num_procedures_log",
+        "number_diagnoses",
+        "number_emergency_log",
+        "number_inpatient_log",
+        "time_in_hospital_log"
+    ],
+    "categorical_features": [
+        "admission_type_id",
+        "diabetesMed",
+        "discharge_disposition_def",
+        "disease_class_1",
+        "race"
+    ]
+}
