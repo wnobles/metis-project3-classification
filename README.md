@@ -1,5 +1,5 @@
 ### Project Title
-Predicting Hospital Readmission for Diabetes Patients
+Predicting 30-Day Hospital Readmission for Diabetes Patients
 
 ### Description
 Using a dataset submitted to UCI from Virginia Commonwealth University detailing 10 years of clinical care at U.S. hospitals and integrated delivery networks, analyze the inpatient encounters for diabetes patients to determine the features related to readmission and predict whether a patient will be readmitted within 30 days of discharge.
