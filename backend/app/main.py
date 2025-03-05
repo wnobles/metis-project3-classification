@@ -11,6 +11,11 @@ from fastapi import FastAPI, Depends, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 
+# -- used for preprocessing and model --
+# from sklearn.compose import ColumnTransformer
+# from sklearn.preprocessing import OneHotEncoder, StandardScaler
+# from xgboost import XGBClassifier
+
 # define the base directory and path to artifacts
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ARTIFACTS_DIR = os.path.join(BASE_DIR, "../artifacts")
@@ -43,9 +48,8 @@ class ModelArtifacts:
             transformer_file = os.path.join(ARTIFACTS_DIR, "preprocessing_transformer.pkl")
             config_file = os.path.join(ARTIFACTS_DIR, "model_config.json")
     
-            self.model = joblib.load(f)
-
-            self.preprocessor = joblib.load(f)
+            self.model = joblib.load(model_file)
+            self.preprocessor = joblib.load(transformer_file)
 
             with open(config_file) as f:
                 model_config = json.load(f)
@@ -109,7 +113,7 @@ class PatientData(BaseModel):
     race: str
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "age": 60,
                 "num_lab_procedures": 40,
