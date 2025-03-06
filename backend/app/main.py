@@ -22,7 +22,11 @@ ARTIFACTS_DIR = os.path.join(BASE_DIR, "../artifacts")
 
 app = FastAPI(title="Diabetes Readmission Predictor API")
 
-origins = ["http://localhost:3000"]
+origins = [
+    "http://localhost:3000",
+    "http://localhost:5173"
+]
+
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
