@@ -57,109 +57,128 @@ function PredictReadmissionForm() {
     };
 
     return (
-        <div>
-            <h2>Patient Readmission</h2>
-            <form onSubmit={handleSubmit}>
+        <div className="w-full max-w-md bg-white p-6 rounded shadow-md">
+            <h2 className="text-2xl font-semibold mb-4 text-center">Patient Readmission</h2>
+            <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                    <label>Age:</label>
+                    <label className="block font-medium mb-1">Age:</label>
                     <input
                     type="number"
                     id="age"
                     name="age"
                     value={formData.age}
                     onChange={handleChange}
+                    className="w-full border border-gray-300 rounded px-3 py-2"
                     />
                 </div>
                 <div>
-                    <label>Number of Lab Procedures:</label>
+                    <label className="block font-medium mb-1">Number of Lab Procedures:</label>
                     <input
                     type="number"
                     id="num_lab_procedures"
                     name="num_lab_procedures"
                     value={formData.num_lab_procedures}
                     onChange={handleChange}
+                    className="w-full border border-gray-300 rounded px-3 py-2"
                     />
                 </div>
                 <div>
-                    <label>Number of Medications:</label>
+                    <label className="block font-medium mb-1">Number of Medications:</label>
                     <input
                     type="number"
                     id="num_medications"
                     name="num_medications"
                     value={formData.num_medications}
                     onChange={handleChange}
+                    className="w-full border border-gray-300 rounded px-3 py-2"
                     />
                 </div>
                 <div>
-                    <label>Number of Procedures:</label>
+                    <label className="block font-medium mb-1">Number of Procedures:</label>
                     <input
                     type="number"
                     id="num_procedures"
                     name="num_procedures"
                     value={formData.num_procedures}
                     onChange={handleChange}
+                    className="w-full border border-gray-300 rounded px-3 py-2"
                     />
                 </div>
                 <div>
-                    <label>Number of Diagnoses:</label>
+                    <label className="block font-medium mb-1">Number of Diagnoses:</label>
                     <input
                     type="number"
                     id="number_diagnoses"
                     name="number_diagnoses"
                     value={formData.number_diagnoses}
                     onChange={handleChange}
+                    className="w-full border border-gray-300 rounded px-3 py-2"
                     />
                 </div>
                 <div>
-                    <label>Number of Emergencies:</label>
+                    <label className="block font-medium mb-1">Number of Emergencies:</label>
                     <input
                     type="number"
                     id="number_emergency"
                     name="number_emergency"
                     value={formData.number_emergency}
                     onChange={handleChange}
+                    className="w-full border border-gray-300 rounded px-3 py-2"
                     />
                 </div>
                 <div>
-                    <label>Number of Inpatient Visits:</label>
+                    <label className="block font-medium mb-1">Number of Inpatient Visits:</label>
                     <input
                     type="number"
                     id="number_inpatient"
                     name="number_inpatient"
                     value={formData.number_inpatient}
                     onChange={handleChange}
+                    className="w-full border border-gray-300 rounded px-3 py-2"
                     />
                 </div>
                 <div>
-                    <label>Time in Hospital:</label>
+                    <label className="block font-medium mb-1">Time in Hospital:</label>
                     <input
                     type="number"
                     id="time_in_hospital"
                     name="time_in_hospital"
                     value={formData.time_in_hospital}
                     onChange={handleChange}
+                    className="w-full border border-gray-300 rounded px-3 py-2"
                     />
                 </div>
                 <div>
-                    <label>Admission Type ID:</label>
+                    <label className="block font-medium mb-1">Admission Type ID:</label>
                     <input
                     type="number"
                     id="admission_type_id"
                     name="admission_type_id"
                     value={formData.admission_type_id}
                     onChange={handleChange}
+                    className="w-full border border-gray-300 rounded px-3 py-2"
                     />
                 </div>
                 <div>
-                    <label>Diabetes Medication:</label>
-                    <select name="diabetesMed" value={formData.diabetesMed} onChange={handleChange}>
+                    <label className="block font-medium mb-1">Diabetes Medication:</label>
+                    <select
+                    name="diabetesMed"
+                    value={formData.diabetesMed}
+                    onChange={handleChange}
+                    className="w-full border border-gray-300 rounded px-3 py-2"
+                    >
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
                     </select>
                 </div>
                 <div>
-                    <label>Discharge Disposition Definition:</label>
-                    <select name="discharge_disposition_def" value={formData.discharge_disposition_def} onChange={handleChange}>
+                    <label className="block font-medium mb-1">Discharge Disposition Definition:</label>
+                    <select
+                    name="discharge_disposition_def"
+                    value={formData.discharge_disposition_def}
+                    onChange={handleChange}
+                    className="w-full border border-gray-300 rounded px-3 py-2"
+                    >
                         <option value="admitted_inpatient">Admitted as Inpatient</option>
                         <option value="cancer_or_childrens">Cancer Center or Children's Hospital</option>
                         <option value="custodial_care">Custodial or Supportive Care</option>
@@ -172,8 +191,13 @@ function PredictReadmissionForm() {
                     </select>
                 </div>
                 <div>
-                    <label>Disease Classification:</label>
-                    <select name="disease_class_1" value={formData.disease_class_1} onChange={handleChange}>
+                    <label className="block font-medium mb-1">Disease Classification:</label>
+                    <select
+                    name="disease_class_1"
+                    value={formData.disease_class_1}
+                    onChange={handleChange}
+                    className="w-full border border-gray-300 rounded px-3 py-2"
+                    >
                         <option value="Certain Conditions originating in the Perinatal Period">Certain Conditions originating in the Perinatal Period</option>
                         <option value="Complications of Pregnancy, Childbirth, and the Puerperium">Complications of Pregnancy, Childbirth, and the Puerperium</option>
                         <option value="Congenital Anomalies">Congenital Anomalies</option>
@@ -197,8 +221,13 @@ function PredictReadmissionForm() {
                     </select>
                 </div>
                 <div>
-                    <label>Race:</label>
-                    <select name="race" value={formData.race} onChange={handleChange}>
+                    <label className="block font-medium mb-1">Race:</label>
+                    <select
+                    name="race"
+                    value={formData.race}
+                    onChange={handleChange}
+                    className="w-full border border-gray-300 rounded px-3 py-2"
+                    >
                         <option value="Asian">Asian</option>
                         <option value="AfricanAmerican">African American</option>
                         <option value="Caucasian">Caucasian</option>
@@ -207,16 +236,21 @@ function PredictReadmissionForm() {
                     </select>
                 </div>
 
-                <button type="submit">Submit</button>
+                <button
+                type="submit"
+                className="w-full bg-blue-600 text-white font-semibold py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                >
+                    Submit
+                </button>
             </form>
 
             {/* Show error message, if any */}
-            {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+            {errorMessage && <p className="text-red-600 text-center mt-4">{errorMessage}</p>}
 
             {/* Show prediction result, if available */}
             {predictionResult && (
-                <div>
-                    <h3>Prediction Result</h3>
+                <div className="mt-6 text-center">
+                    <h3 className="text-xl font-bold mb-2">Prediction Result</h3>
                     <p>Prediction: {predictionResult.prediction}</p>
                     <p>Probability: {predictionResult.probability}</p>
                     <p>Risk Category: {predictionResult.risk_category}</p>
