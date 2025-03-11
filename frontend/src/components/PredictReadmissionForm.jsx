@@ -4,6 +4,8 @@ import api from "../api";
 function PredictReadmissionForm() {
 
     // set up fields needed by the model
+    // You don't typically put json inside of a useState. Anytime you change anything in formData, anything that uses a value from formData has to re-render. It's more common to just breakout each item into its own piece of state.
+    // Now adays, a more industry standard for form data is react-hook-forms: https://react-hook-form.com/
     const [formData, setFormData] = useState({
         age: 60,
         num_lab_procedures: 40,
@@ -38,6 +40,8 @@ function PredictReadmissionForm() {
         event.preventDefault();
         setErrorMessage("");
         setPredictionResult(null);
+        //You could set a loading state here which you could use to disable the button so people don't spam the backend with requests.
+        // IDK how long your code takes to run but if its more than like .5 seconds it'd be a good addition.
 
         try {
             // POST request to /predict
@@ -53,13 +57,16 @@ function PredictReadmissionForm() {
                 // no response or something else happened
                 setErrorMessage("An error occurred while making the request.");
             }
+        } finally {
+            // a good use for the finally piece for setting that loading state to false
         }
     };
 
     return (
-        <div className="w-full max-w-md bg-white p-6 rounded shadow-md">
+        <div className="w-full max-w-md bg-white p-6 rounded text-black">
             <h2 className="text-2xl font-semibold mb-4 text-center">Patient Readmission</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
+                {/* Theres nothing wrong with rolling these components by yourself, especially while you learn. If you want some good looking components right out of the box that are customizeable a super popular library right now is ShadCN: https://ui.shadcn.com/  */}
                 <div>
                     <label className="block font-medium mb-1">Age:</label>
                     <input
@@ -239,6 +246,7 @@ function PredictReadmissionForm() {
                 <button
                 type="submit"
                 className="w-full bg-blue-600 text-white font-semibold py-2 rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                // you can use 'disabled={loading}' here when you add that loading variable to disable this while the network request is running. This also gives some sort of indication that your button press worked.
                 >
                     Submit
                 </button>
